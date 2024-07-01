@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regalium Coming Soon</title>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      var desktopSite = "https://regalium-desktop.vercel.app"; // desktop version
+      var mobileSite = "https://regalium-mobile.vercel.app"; // mobile version
+
+      // Detect device and redirect accordingly
+      function detectDevice() {
+        if (window.innerWidth <= 768) {
+          if (window.location.href.includes(desktopSite)) {
+            window.location.href = mobileSite;
+          }
+        } else {
+          if (window.location.href.includes(mobileSite)) {
+            window.location.href = desktopSite;
+          }
+        }
+      }
+
+      // Call the function when the script loads
+      detectDevice();
+
+      // Call the function on window resize
+      window.onresize = function () {
+        detectDevice();
+      };
+    </script>
   </head>
   <body>
     <div class="container">
@@ -36,8 +61,5 @@
         </div>
       </div>
     </div>
-    <script
-      src = "script.js"></script>
-    </script>
   </body>
 </html>
