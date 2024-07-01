@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/Avenir\ Next.ttc") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agentur";
+  src: url("fonts/FontsFree-Net-Agentur-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agentur Display";
+  src: url("fonts/FontsFree-Net-Agentur-Display.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  z-index: 2;
+}
+
+.coming-soon {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+
+  font-family: "Avenir";
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 140px */
+  text-transform: uppercase;
+}
+
+.svg-container {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.svg-container svg {
+  margin-right: 10px;
+}
+
+.svg-text {
+  color: white;
+  font-size: 1em;
+  text-align: left;
+  margin-left: -500px;
+}
+
+.svg-text .svg-heading {
+  color: #aaa;
+  padding-bottom: 40px !important;
+
+  font-family: "Avenir";
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  text-transform: capitalize;
+}
+
+.svg-subheading {
+  color: #e24d26;
+
+  font-family: Agentur;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.svg-author {
+  color: #fff;
+
+  text-align: center;
+  font-family: "Avenir";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 22.4px */
+  letter-spacing: 3.36px;
+  text-transform: uppercase;
+}
