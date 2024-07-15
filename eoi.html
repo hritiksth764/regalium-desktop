@@ -4,32 +4,219 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expression of Interest</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      h1 {
-        margin-top: 20px;
-      }
-      iframe {
-        width: 100%;
-        height: 100vh;
-        border: none;
-      }
-      @media (max-width: 768px) {
-        iframe {
-          height: 90vh;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="eoi.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- <h1>Expression of Interest</h1> -->
-    <iframe src="https://regalium-registration.vercel.app/#form"></iframe>
+    <header class="header">
+      <img src="image copy.png" alt="Regalium Logo" class="logo" />
+    </header>
+
+    <main class="main-content">
+      <section class="intro">
+        <h1>JOIN US AS REGALIUM</h1>
+        <p class="p1">A Realisation of the Future</p>
+        <br />
+        <p class="p2">
+          Please go through the
+          <a class="eoi-text">Expression of Interest</a>
+          and fill out the below form.
+        </p>
+        <div class="scrollable-doc">
+          <iframe
+            src="https://docs.google.com/document/d/1WYJCks_tH5G7jggRPZ-l0LAkEz9_hN2GQWvRVvIoHxc/preview"
+            frameborder="0"
+          ></iframe>
+        </div>
+        <div class="download-link">
+          <a href="Regalium-Letterhead.pdf" download>Download PDF</a>
+        </div>
+      </section>
+      <h2>EXPRESSION OF INTEREST</h2>
+      <p>Please fill this form to sign the EOI (Expression of Interest)</p>
+      <section class="form-section" id="formContainer">
+        <form id="eoi-form" onsubmit="handleSubmit(event)">
+          <input
+            class="first"
+            type="text"
+            id="brand-name"
+            name="brand_name"
+            placeholder="Brand Name"
+            required
+          />
+          <input
+            type="text"
+            id="legal-entity"
+            name="legal_entity"
+            placeholder="Legal Entity"
+            required
+          />
+          <input
+            type="text"
+            id="dob-display"
+            name="dob"
+            placeholder="Date of Birth (dd/mm/yyyy)"
+            required
+          />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number"
+            pattern="\+91[0-9]{10}"
+            title="Phone number must be in the format +91 98xxxxxxxx"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            id="category"
+            name="category"
+            placeholder="Category of Retail"
+            required
+          />
+          <input
+            type="text"
+            id="area"
+            name="area"
+            placeholder="Approximate Carpet Area Requirement in Sq.Ft"
+            required
+          />
+          <input
+            type="text"
+            id="fit-out"
+            name="fit_out"
+            placeholder="Estimated Fit-Out Period Required"
+            required
+          />
+          <input
+            class="last"
+            type="text"
+            id="preferences"
+            name="preferences"
+            placeholder="Any Specific Requirements or Preferences?"
+          />
+          <button type="submit">Submit</button>
+          <p class="disclaimer">
+            *Please note that this EOI is intended solely for planning purposes
+            and does not constitute a binding agreement. Upon receiving your
+            EOI, we will provide further details and engage in discussions to
+            finalize the terms and conditions of the lease agreement.
+          </p>
+        </form>
+        <div id="thank-you-message" style="display: none">
+          <h3>Thank you!</h3>
+          <p>Your form has been submitted successfully.</p>
+        </div>
+        <div id="error-message" style="display: none">
+          <h3>Submission Failed</h3>
+          <p>There was an error submitting your form. Please try again.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="line-separator"></div>
+      <h1>ADDRESS</h1>
+      <p>
+        Bungalow 375, 13th Main Road, 3rd Block Koramangala,<br />Bengaluru,
+        Karnataka 560034
+      </p>
+      <div class="line-separator"></div>
+      <h1>CONNECT WITH US</h1>
+      <p>www.regalium.com | info@regalium.com</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        // Check if the user has already submitted the form
+        const formSubmitted = getCookie("formSubmitted");
+        if (formSubmitted) {
+          window.location.href = "/index.html";
+        } else {
+          // Show the form container if the form has not been submitted
+          document.getElementById("formContainer").style.display = "block";
+        }
+      });
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = {
+          brand_name: formData.get("brand_name"),
+          legal_entity: formData.get("legal_entity"),
+          dob: formData.get("dob"),
+          phone: formData.get("phone"),
+          email: formData.get("email"),
+          category: formData.get("category"),
+          area: formData.get("area"),
+          fit_out: formData.get("fit_out"),
+          preferences: formData.get("preferences"),
+        };
+
+        fetch(
+          "https://script.google.com/macros/s/AKfycbxy3Y8KYN1RF4_Qk5_4EsXZpIgnnvmCIlfObQa0wGOwWFzWUigfSOXB8aPSVq2D41bI/exec", // Replace with your deployed web app URL
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+          }
+        )
+          .then((response) => response.text())
+          .then((responseText) => {
+            console.log("Response from server:", responseText); // Log the response for debugging
+            if (responseText === "Success") {
+              setCookie("formSubmitted", "true", 3650); // 10 years
+              document.getElementById("thank-you-message").style.display =
+                "block";
+              setTimeout(() => {
+                window.location.href = "";
+              }, 3000);
+            } else {
+              document.getElementById("error-message").style.display = "block";
+            }
+          })
+          .catch((error) => {
+            console.error("Error submitting form:", error);
+            document.getElementById("error-message").style.display = "block";
+          });
+      }
+
+      function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      }
+
+      function getCookie(name) {
+        const cname = name + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) === " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      document
+        .getElementById("eoi-form")
+        .addEventListener("submit", handleSubmit);
+    </script>
   </body>
 </html>
