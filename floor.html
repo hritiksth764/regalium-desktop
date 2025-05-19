@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regal Gallery - Regalium</title>
+    <link rel="stylesheet" href="floor.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="contact-header">
+      <div class="header-left"></div>
+      <div class="contact-logo">REGALIUM</div>
+      <div class="hamburger-menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="20"
+          viewBox="0 0 36 20"
+          fill="none"
+        >
+          <path d="M36 2L0 2" stroke="#0F0F0F" stroke-width="3" />
+          <path d="M36 10L0 10" stroke="#0F0F0F" stroke-width="3" />
+          <path d="M36 18L0 18" stroke="#0F0F0F" stroke-width="3" />
+        </svg>
+      </div>
+    </header>
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="close-menu" id="closeMenu">&times;</div>
+      <ul class="menu-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="office.html">Office</a></li>
+        <li><a href="retail.html">Retail</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <section class="dual-boxed-section">
+      <div class="column">
+        <h2>The Members-only Club</h2>
+        <p>
+          An exclusive club that combines work and play tops Regalium.
+          Productive periods call for concerted relaxation, and here, our
+          community finds their solace as they continue to converse over
+          culinary delights with stunning views. The Club is designed with
+          Regalium's signature luxury and personalised approach in mind. It
+          offers members the freedom to customise it in the way they want: it
+          can be used as a private space within Regalium to enjoy premium
+          facilities for work, entertainment and dining, as well as a dynamic
+          event space which can support a range of large- scale, unique
+          experiences.
+        </p>
+        <img src="galleryColumn/image.png" alt="Regal Boulevard Image" />
+      </div>
+
+      <div class="separator-line"></div>
+
+      <div class="column">
+        <h2>The Epicurean</h2>
+        <p>
+          An exclusive club that combines work and play tops Regalium.
+          Productive periods call for concerted relaxation, and here, our
+          community finds their solace as they continue to converse over
+          culinary delights with stunning views. The Club is designed with
+          Regalium’s signature luxury and personalised approach in mind. It
+          offers members the freedom to customise it in the way they want: it
+          can be used as a private space within Regalium to enjoy premium
+          facilities for work, entertainment and dining, as well as a dynamic
+          event space which can support a range of large- scale, unique
+          experiences.
+        </p>
+        <img src="galleryColumn/image copy.png" alt="Regal Suites Image" />
+      </div>
+    </section>
+
+    <section class="terrace-section">
+      <h2 class="section-title">The Terrace</h2>
+      <div class="terrace-content">
+        <!-- Left side -->
+        <div class="terrace-left">
+          <img
+            src="floorImages/image copy.png"
+            alt="Pool View"
+            class="terrace-img-small"
+          />
+        </div>
+
+        <!-- Right side -->
+        <div class="terrace-right">
+          <img
+            src="floorImages/image.png"
+            alt="Terrace View"
+            class="terrace-img-large"
+          />
+          <p class="terrace-desc">
+            The Terrace at Regalium offers users a space to gain the much needed
+            relaxation. As a comfortable, dynamic community space, they can opt
+            to host casual meetings, unwind, and network surrounded by the
+            stunning views of Bengaluru. The Terrace is designed around a wide
+            range of diverse experiences — from a style and leisure hub which
+            will host pop-up retail installations to an oasis featuring an
+            aromatherapy garden for office professionals to enjoy and relax in.
+            In addition, the Terrace also features an amphitheatre, and a
+            beautiful pool perched on the edge of the building, surrounded by
+            luxuriant greenery and stunning views, making it an ideal venue for
+            hosting events and parties.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="sustainability-section">
+      <h2 class="section-title">
+        Ensuring a Balanced and<br />Sustainable Environment
+      </h2>
+      <p class="section-description">
+        The heritage we find inspiration in, combined with our guiding values of
+        the Jivan Chakra, leads us to put into action the principles of
+        sustainability — where we give back to the environment that shapes us.
+        To complete our ecosystem, we ensure the achievement of high standards
+        of sustainability, confirmed by the world’s leading certification
+        bodies.
+      </p>
+
+      <div class="sustainability-image">
+        <img src="floorImages/image copy 2.png" alt="Sustainability Graphic" />
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-top">
+        <img
+          src="image copy 9.png"
+          alt="Regalium Logo"
+          class="footer-logo-img"
+        />
+
+        <ul class="footer-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blueprints</a></li>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Office</a></li>
+          <li><a href="#">Retail</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <hr class="footer-line" />
+
+      <div class="footer-bottom">
+        <p>© 2024 Regalium by Svasa Life, Inc</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const closeMenu = document.getElementById("closeMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+
+      hamburgerMenu.addEventListener("click", () => {
+        menuOverlay.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent background scroll
+      });
+
+      closeMenu.addEventListener("click", () => {
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+    </script>
+  </body>
+</html>

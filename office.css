@@ -1,0 +1,509 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Merriweather", serif;
+  background: #ffffff;
+  color: #111113;
+}
+
+/* Font import */
+@font-face {
+  font-family: "WorkSans";
+  src: url("fonts/WorkSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("fonts/Merriweather-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: "Merriweather";
+  src: url("./fonts/Merriweather-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+} */
+
+/* ---------------------- HEADER ---------------------- */
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.2vw 7vw;
+  height: 8vh;
+  position: relative;
+}
+
+/* Placeholder for layout symmetry */
+.header-left {
+  width: 1.8vw;
+}
+
+.contact-logo {
+  font-family: serif;
+  font-size: 2vw;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.05vw;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+}
+
+.hamburger-menu svg {
+  width: 1.8vw;
+  height: auto;
+}
+
+.luxury-retail {
+  margin: 7vw;
+}
+
+/* Top section with text + image side by side */
+.retail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5vw;
+  margin-bottom: 4vw;
+}
+
+.retail-text {
+  flex: 1;
+  max-width: 40vw;
+}
+
+.retail-text h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2.9vw;
+  font-weight: 400;
+  margin-bottom: 1vw;
+}
+
+.retail-text p {
+  font-family: "WorkSans";
+  font-size: 1vw;
+  line-height: 1.6;
+  color: #111113;
+  max-height: 200px;
+}
+
+.retail-image {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.retail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.retail-blueprints {
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  align-items: center;
+  justify-content: center;
+  padding: 4vw 0vw;
+}
+
+.retail-blueprints img {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+/* multi-tenant section */
+.multi-tenant-section {
+  padding: 0 7vw;
+  margin-top: 6vw;
+  margin-bottom: 8vw;
+}
+
+.tenant-title {
+  font-family: "Merriweather", serif;
+  font-size: 2.8vw;
+  font-weight: 400;
+  color: #0f0f0f;
+  margin-bottom: 1.5vw;
+}
+
+.tenant-description {
+  font-family: "WorkSans", sans-serif;
+  font-size: 1.05vw;
+  line-height: 1.8vw;
+  color: #4d4d4d;
+  margin-bottom: 4vw;
+}
+
+.tenant-floorplans img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 6vw;
+  padding: 5vw;
+}
+
+/* grid layout */
+.grid-feature {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  background: #e6e6e6;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0vw;
+}
+
+.grid-feature > * {
+  background: #fff;
+  padding: 0vw;
+  min-height: 18vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+}
+
+/* Remove only bottom borders for middle column */
+
+/* Make bottom border white for middle column (2nd column) */
+/* Explicitly target middle column cells */
+/* Remove bottom border of middle column cells */
+.grid-feature > *:nth-child(2),
+.grid-feature > *:nth-child(5),
+.grid-feature > *:nth-child(8) {
+  border-bottom: none;
+}
+
+/* Remove top border of the cell below the middle column cells */
+.grid-feature > *:nth-child(5),
+.grid-feature > *:nth-child(8) {
+  border-top: none;
+}
+/* Center image slices */
+.image-slice img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Text cards with hover effect */
+.feature-card {
+  perspective: 1000px;
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.feature-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-front {
+  background: #fff;
+}
+
+.card-back {
+  background: #111;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+/* Optional visual consistency */
+h3 {
+  font-size: 1.6vw;
+  margin: 0.3vw 0 0;
+  font-family: "WorkSans", sans-serif;
+}
+
+small {
+  font-size: 0.8vw;
+  color: #ba6b57;
+  font-family: "WorkSans", sans-serif;
+  margin-bottom: 0.5vw;
+}
+
+.empty-cell {
+  background: #fff;
+}
+
+/* support section */
+
+.support-section {
+  padding: 7vw 7vw;
+  background: #fff;
+}
+
+.support-title {
+  font-size: 4vw;
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  margin-bottom: 2vw;
+  line-height: 1.2;
+  color: #111;
+}
+
+.support-description {
+  font-family: "WorkSans", sans-serif;
+  font-size: 1.2vw;
+  color: #222;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+/* explore section */
+.explore-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 5vw 7vw;
+  gap: 4vw;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.explore-left {
+  flex: 1;
+}
+
+.explore-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Keep content left-aligned */
+  margin: auto 0; /* ✅ Vertically center within parent */
+  text-align: left;
+  gap: 1.5vw;
+}
+
+.explore-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1vw;
+}
+
+.explore-left h2 {
+  align-self: stretch;
+  color: #0f0f0f;
+
+  font-family: Merriweather;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+}
+
+.explore-left h4 {
+  color: #ba6b57;
+  font-size: 1vw;
+  font-family: "WorkSans", sans-serif;
+  margin-bottom: 0.5vw;
+  text-align: left !important;
+}
+
+.explore-left p {
+  font-size: 0.95vw;
+  line-height: 1.6;
+  color: #333;
+  font-family: "WorkSans", sans-serif;
+}
+
+.explore-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* ✅ Align all content to the right */
+  justify-content: center;
+  gap: 2vw;
+  padding-right: 0; /* ✅ Remove any internal padding */
+  margin-right: 0; /* ✅ Align fully to edge of parent */
+  padding-top: 10px !important;
+}
+
+.right-card {
+  text-align: center;
+  margin-top: 0 !important;
+  padding-top: 10px !important;
+}
+
+.right-card img {
+  width: 100%;
+  max-width: 400px;
+  /* ✅ Make sure it stretches fully in the container */
+  height: auto;
+  display: block;
+}
+.right-card p {
+  font-size: 0.95vw;
+  color: #111;
+  font-family: "WorkSans", sans-serif;
+}
+
+/* menu overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #141414;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Close icon */
+.close-menu {
+  position: absolute;
+  top: 2vw;
+  right: 3vw;
+  font-size: 2vw;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Menu List */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.menu-list li {
+  border-top: 1px solid #888;
+  padding: 2vw 0;
+  font-family: "WorkSans", sans-serif;
+  font-size: 1.5vw;
+  color: white;
+}
+
+.menu-list li:last-child {
+  border-bottom: 1px solid #888;
+}
+
+.menu-list li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-list li a:hover {
+  color: #e2bebe;
+}
+
+/* footer */
+.footer {
+  background-color: #0f0f0f;
+  color: #dcdcdc;
+  padding: 4vw 7vw 2vw;
+  font-family: "WorkSans", sans-serif;
+  font-size: 0.9vw;
+}
+
+.footer-logo {
+  color: white;
+  font-size: 1.5vw;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2vw;
+  font-family: "WorkSans", sans-serif;
+  letter-spacing: 0.1vw;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2vw;
+}
+
+.footer-nav li a {
+  text-decoration: none;
+  color: #dcdcdc;
+  font-weight: 300;
+  font-size: 0.95vw;
+}
+
+.footer-line {
+  border: none;
+  border-top: 1px solid #888;
+  margin: 2vw 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85vw;
+  color: #aaa;
+  flex-wrap: wrap;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5vw;
+}
+
+.footer-social a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.9vw;
+}
+
+.footer-logo-img {
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 2vw;
+  display: block;
+}

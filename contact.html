@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Regalium</title>
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <header class="contact-header">
+      <div class="contact-logo">REGALIUM</div>
+      <div class="hamburger-menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="20"
+          viewBox="0 0 36 20"
+          fill="none"
+        >
+          <path d="M36 2L0 2" stroke="#0F0F0F" stroke-width="3" />
+          <path d="M36 10L0 10" stroke="#0F0F0F" stroke-width="3" />
+          <path d="M36 18L0 18" stroke="#0F0F0F" stroke-width="3" />
+        </svg>
+      </div>
+    </header>
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="close-menu" id="closeMenu">&times;</div>
+      <ul class="menu-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="office.html">Office</a></li>
+        <li><a href="retail.html">Retail</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="contact-container">
+      <!-- Left side heading -->
+      <div class="contact-left">
+        <h1>Connect<br />with us</h1>
+      </div>
+
+      <!-- Right side form -->
+      <div class="contact-right">
+        <form class="contact-form">
+          <div class="form-group full-width">
+            <!-- <label for="brand">Brand Name</label> -->
+            <input type="text" id="brand" placeholder="Enter brand name" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <!-- <label for="location">Work location</label> -->
+              <input type="text" id="location" placeholder="Input text" />
+            </div>
+            <div class="form-group">
+              <!-- <label for="email">Email</label> -->
+              <input type="email" id="email" placeholder="Email" />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <!-- <label for="category">Category of retail</label> -->
+            <input type="text" id="category" placeholder="Category of retail" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <!-- <label for="area">Approximate carpet area requirement</label> -->
+              <input
+                type="text"
+                id="area"
+                placeholder="Approximate area requirement Sq.ft"
+              />
+            </div>
+            <div class="form-group">
+              <!-- <label for="timeline">Estimated Fit-Out Period Required</label> -->
+              <input type="text" id="timeline" placeholder="Duration" />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <!-- <label for="notes">Any specific requirement?</label> -->
+            <textarea
+              id="notes"
+              rows="3"
+              placeholder="Any specific requirement?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Explore the space</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-top">
+        <img
+          src="image copy 9.png"
+          alt="Regalium Logo"
+          class="footer-logo-img"
+        />
+
+        <ul class="footer-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blueprints</a></li>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Office</a></li>
+          <li><a href="#">Retail</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <hr class="footer-line" />
+
+      <div class="footer-bottom">
+        <p>© 2024 Regalium by Svasa Life, Inc</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const closeMenu = document.getElementById("closeMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+
+      hamburgerMenu.addEventListener("click", () => {
+        menuOverlay.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent background scroll
+      });
+
+      closeMenu.addEventListener("click", () => {
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+    </script>
+  </body>
+</html>

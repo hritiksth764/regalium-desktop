@@ -3,64 +3,236 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Regalium Coming Soon</title>
+    <title>Regalium</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- <script>
-      var desktopSite = "https://regalium-desktop.vercel.app"; // desktop version
-      var mobileSite = "https://regalium-mobile.vercel.app"; // mobile version
-
-      // Detect device and redirect accordingly
-      function detectDevice() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        var isMobile = /android|iphone/.test(userAgent);
-
-        if (isMobile && !window.location.href.includes(mobileSite)) {
-          window.location.href = mobileSite;
-        } else if (!isMobile && !window.location.href.includes(desktopSite)) {
-          window.location.href = desktopSite;
-        }
-      }
-
-      // Call the function when the script loads
-      detectDevice();
-
-      // Call the function on window resize
-      window.onresize = function () {
-        detectDevice();
-      };
-    </script> -->
   </head>
   <body>
-    <div class="container">
-      <div class="background-overlay"></div>
-      <img
-        src="image 9.png"
-        alt="Background Image"
-        class="background-image"
-        loading="lazy"
-      />
-      <div class="logo">
-        <img src="image.png" alt="Regalium Logo" />
-      </div>
-      <div class="coming-soon">COMING SOON</div>
-      <!-- <div class="svg-container">
+    <!-- Header -->
+    <header class="contact-header">
+      <div class="header-left"></div>
+      <div class="contact-logo">REGALIUM</div>
+      <div class="hamburger-menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="559"
-          height="116"
-          viewBox="0 0 559 116"
+          width="36"
+          height="20"
+          viewBox="0 0 36 20"
           fill="none"
         >
-          <path d="M0 0H559L501.695 116H0V0Z" fill="#010101" />
+          <path d="M36 2L0 2" stroke="#0F0F0F" stroke-width="3" />
+          <path d="M36 10L0 10" stroke="#0F0F0F" stroke-width="3" />
+          <path d="M36 18L0 18" stroke="#0F0F0F" stroke-width="3" />
         </svg>
-        <!-- <div class="svg-text">
-          <span class="svg-heading">Book Event On Mobile</span><br />
-          <span class="svg-subheading"
-            >BUILDING AND EXPONENTIAL ORGANIZATION</span
-          ><br />
-          <span class="svg-author">WITH PETER DIAMANDIS</span>
-        </div> 
-      </div> -->
+      </div>
+    </header>
+    <!-- Fullscreen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="close-menu" id="closeMenu">&times;</div>
+      <ul class="menu-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="office.html">Office</a></li>
+        <li><a href="retail.html">Retail</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </div>
+
+    <!-- Scroll-Controlled Section -->
+    <div class="scroll-wrapper">
+      <div class="sticky-frame">
+        <div class="zoom-wrapper">
+          <img
+            src="RetailNodediagram_Resized_FullFit_1920x1080.jpeg"
+            class="background-img"
+            alt="Building"
+          />
+        </div>
+
+        <h1 class="title">REGALIUM</h1>
+        <p class="description">
+          Within the bounds of a revolutionary manifestation, we have created a
+          glimpse into an inspired world.
+        </p>
+
+        <!-- Phase 3 Side Labels -->
+        <div class="side-labels" id="roots-label">
+          <div class="label-left">
+            <div class="our-roots-trigger">Our Roots</div>
+            <div>Guiding Ethos</div>
+          </div>
+          <div class="label-right">Timeline</div>
+        </div>
+
+        <div class="roots-panel">
+          <button class="close-roots">&times;</button>
+
+          <div class="roots-container">
+            <div class="roots-left-images">
+              <img src="rootspannel/image.png" alt="Roots 1" />
+              <img src="rootspannel/image copy.png" alt="Roots 2" />
+              <img src="rootspannel/image copy 2.png" alt="Roots 3" />
+            </div>
+
+            <div class="roots-content-box">
+              <div class="roots-content-text">
+                <h2>Our Roots</h2>
+                <p>
+                  Helmed by Ravi Machani, the Machani Group is a 100-year-old
+                  family business with a rich legacy.
+                </p>
+                <p>
+                  We are passionate advocates for the preservation of personal
+                  and cultural heritage — defining how future generations will
+                  live and grow.
+                </p>
+                <p>
+                  We find our genesis in the values and heritage that we are
+                  rooted in. Their retrospective exploration reveals a holistic
+                  perspective of the entity we aim to be — and the one we are
+                  actively shaping ourselves into.
+                </p>
+                <p>
+                  As a collective network, we work with, and across various
+                  domains that contribute to changing the landscape of India’s
+                  future — be it defence, robotics, hospitality, textile,
+                  publishing, future-forward tech like AI, or even gaming.
+                </p>
+
+                <div class="roots-highlighted-line">
+                  Placeholder text that can come in two to three lines.
+                </div>
+              </div>
+
+              <!-- <div class="roots-building-image">
+                <img src="building.jpg" alt="Regalium Building" />
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="normal-scroll">
+      <div class="content-wrapper">
+        <!-- Left side image -->
+        <div class="left-section">
+          <img src="image copy.png" alt="Map with overlay" />
+        </div>
+
+        <!-- Right side content -->
+        <div class="right-section">
+          <div class="text-with-image">
+            <div class="paragraphs">
+              <p>
+                Regalium is uniquely poised to succeed as a luxurious and
+                thriving community hub in Koramangala, Bengaluru. Our location
+                strategically represents both our innovative vision and the
+                Machani Group legacy.
+              </p>
+              <p>
+                There is a growing gap between people, physical spaces, and
+                culture in Bengaluru, and Koramangala has grown to be a region
+                of creative opulence — where individuals and organisations find
+                space to learn from each other, create and build with ease, and
+                also seek affluent homes.
+              </p>
+            </div>
+            <img src="image copy 2.png" alt="Old map" class="right-image" />
+          </div>
+
+          <!-- Flex table -->
+          <div class="flex-table">
+            <div class="flex-item">
+              <h4>Luxury</h4>
+              <p>
+                A new take on luxury: Through elegant, considerate, holistic,
+                and personalised experiences.
+              </p>
+            </div>
+            <div class="flex-item">
+              <h4>Innovation</h4>
+              <p>
+                We push the limits of what the future can hold: As individuals,
+                as businesses, and as a nation.
+              </p>
+            </div>
+            <div class="flex-item">
+              <h4>Community</h4>
+              <p>
+                We are a holistic ecosystem defined for and by its exclusive
+                group of members.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-section">
+      <img src="image copy 3.png" alt="Building" class="feature-bg" />
+
+      <div class="feature-overlay">
+        <div id="glassBox" class="glass-box">
+          <h5>KEY FEATURES</h5>
+          <ul>
+            <li>111,200 sq ft</li>
+            <li>9 floors</li>
+            <li>30 suites</li>
+            <li>Gallery</li>
+          </ul>
+        </div>
+        <div class="modal-overlay" id="modalOverlay">
+          <div class="modal-content" id="modalContent">
+            <img src="modalimage.png" alt="Modal Image" class="modal-image" />
+            <div class="modal-text-scroll">
+              <p class="modal-text">
+                <!-- Long scrollable paragraph -->
+                Bengaluru's quest for a space that houses avenues to a finer
+                life, where community, innovation, and luxury take precedence,
+                is soon to end. The inspired world we dream of is possible
+                through our actions of today. Within the bounds of a
+                revolutionary manifestation, we have created a glimpse into this
+                world: Regalium. A mixed-use hub for those who relentlessly
+                dedicate time to a better tomorrow — for themselves, and the
+                world at large — is our avenue to achieve the society of
+                tomorrow. As we grow, we invite those with similar and profound
+                ideas to join us in this journey.
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1 class="feature-heading">An Encompassing Scape</h1>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <img
+          src="image copy 9.png"
+          alt="Regalium Logo"
+          class="footer-logo-img"
+        />
+
+        <ul class="footer-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blueprints</a></li>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Office</a></li>
+          <li><a href="#">Retail</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <hr class="footer-line" />
+
+      <div class="footer-bottom">
+        <p>© 2024 Regalium by Svasa Life, Inc</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

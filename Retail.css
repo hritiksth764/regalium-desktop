@@ -1,0 +1,498 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Merriweather", serif;
+  background: #ffffff;
+  color: #111113;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Ensure vertical scroll always works */
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Font import */
+@font-face {
+  font-family: "WorkSans";
+  src: url("fonts/WorkSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ---------------------- HEADER ---------------------- */
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.2vw 7vw;
+  height: 8vh;
+  position: relative;
+}
+
+/* Placeholder for layout symmetry */
+.header-left {
+  width: 1.8vw;
+}
+
+.contact-logo {
+  font-family: serif;
+  font-size: 2vw;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.05vw;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+}
+
+.hamburger-menu svg {
+  width: 1.8vw;
+  height: auto;
+}
+
+.luxury-retail {
+  padding: 0 7vw;
+  margin-top: 5vw;
+}
+
+/* Top section with text + image side by side */
+.retail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5vw;
+  margin-bottom: 4vw;
+}
+
+.retail-text {
+  flex: 1;
+  max-width: 40vw;
+}
+
+.retail-text h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2.9vw;
+  font-weight: 400;
+  margin-bottom: 1vw;
+}
+
+.retail-text p {
+  font-family: "WorkSans";
+  font-size: 1vw;
+  line-height: 1.6;
+  color: #111113;
+}
+
+.retail-image {
+  flex: 1;
+  max-width: 45vw;
+}
+
+.retail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bottom blueprints */
+.retail-blueprints {
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  margin-top: 3vw;
+}
+
+.retail-blueprints img {
+  width: 48%;
+  height: auto;
+  display: block;
+  opacity: 0.9; /* if needed to match style */
+}
+
+.retail-blueprints {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+  margin-top: 3vw;
+}
+
+.retail-blueprints img {
+  width: 100%;
+  /* Optional: limit width to keep it clean */
+  height: auto;
+  display: block;
+  opacity: 0.9; /* Optional for subtle blueprint styling */
+}
+
+.retail-landscape {
+  padding: 7vw;
+  background-color: #fff;
+}
+
+.retail-intro {
+  /* max-width: 60vw; */
+  margin-bottom: 3vw;
+}
+
+.retail-intro h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2.8vw;
+  font-weight: 400;
+  color: #0f0f0f;
+  margin-bottom: 1.5vw;
+}
+
+.retail-intro p {
+  font-family: "WorkSans";
+  font-size: 1vw;
+  line-height: 1.7;
+  color: #0f0f0f;
+}
+
+.image-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+}
+
+.row img {
+  width: 48.8%; /* slight margin to fit two images perfectly with gap */
+  height: 40vw;
+  display: block;
+}
+
+.row {
+  display: flex;
+  gap: 1vw;
+}
+
+/* First row with custom split */
+
+/* First row: 60% + 40% */
+/* First row: 60% + 40% */
+/* First row: 60% + 40% */
+.row-60-40 img:first-child {
+  width: 60%;
+}
+.row-60-40 img:last-child {
+  width: 40%;
+}
+
+/* Second row: 40% + 60% */
+.row-40-60 img:first-child {
+  width: 40%;
+}
+.row-40-60 img:last-child {
+  width: 60%;
+}
+
+/* menu overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #141414;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Close icon */
+.close-menu {
+  position: absolute;
+  top: 2vw;
+  right: 3vw;
+  font-size: 2vw;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Menu List */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.menu-list li {
+  border-top: 1px solid #888;
+  padding: 2vw 0;
+  font-family: "WorkSans", sans-serif;
+  font-size: 1.5vw;
+  color: white;
+}
+
+.menu-list li:last-child {
+  border-bottom: 1px solid #888;
+}
+
+.menu-list li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-list li a:hover {
+  color: #e2bebe;
+}
+
+.scape-section {
+  padding: 6vw 7vw;
+  background-color: #fff;
+  text-align: left;
+}
+
+.scape-section h2 {
+  font-size: 2.8vw;
+  margin-bottom: 1.5vw;
+  color: #0f0f0f;
+  font-family: Merriweather;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.scape-section p {
+  font-size: 1vw;
+  line-height: 1.8;
+  color: #111;
+  font-family: "WorkSans", sans-serif;
+  margin: 0 auto 4vw;
+}
+
+.main-node-image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 4vw;
+}
+
+.node-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  flex-wrap: wrap;
+}
+
+.node {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.node img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1vw;
+}
+
+.node p {
+  font-size: 0.9vw;
+  color: #666;
+}
+
+.node-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  margin-top: 3vw;
+}
+
+.node {
+  flex: 1;
+  max-width: 28%; /* or use a fixed width like 20vw if you prefer */
+  text-align: center;
+}
+
+.node img {
+  width: 100%;
+  height: 22vw; /* ✅ Consistent height */
+  object-fit: cover; /* ✅ Keeps aspect ratio and fills the box */
+  display: block;
+  margin-bottom: 1vw;
+}
+
+.explore-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 5vw 7vw;
+  gap: 4vw;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.explore-left {
+  flex: 1;
+}
+
+.explore-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Keep content left-aligned */
+  margin: auto 0; /* ✅ Vertically center within parent */
+  text-align: left;
+  gap: 1.5vw;
+}
+
+.explore-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1vw;
+}
+
+.explore-left h2 {
+  align-self: stretch;
+  color: #0f0f0f;
+
+  font-family: Merriweather;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+}
+
+.explore-left h4 {
+  color: #ba6b57;
+  font-size: 1vw;
+  font-family: "WorkSans", sans-serif;
+  margin-bottom: 0.5vw;
+  text-align: left !important;
+}
+
+.explore-left p {
+  font-size: 0.95vw;
+  line-height: 1.6;
+  color: #333;
+  font-family: "WorkSans", sans-serif;
+}
+
+.explore-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* ✅ Align all content to the right */
+  justify-content: center;
+  gap: 2vw;
+  padding-right: 0; /* ✅ Remove any internal padding */
+  margin-right: 0; /* ✅ Align fully to edge of parent */
+  padding-top: 10px !important;
+}
+
+.right-card {
+  text-align: center;
+  margin-top: 0 !important;
+  padding-top: 10px !important;
+}
+
+.right-card img {
+  width: 100%;
+  max-width: 400px;
+  /* ✅ Make sure it stretches fully in the container */
+  height: auto;
+  display: block;
+}
+.right-card p {
+  font-size: 0.95vw;
+  color: #111;
+  font-family: "WorkSans", sans-serif;
+}
+
+/* footer */
+.footer {
+  background-color: #0f0f0f;
+  color: #dcdcdc;
+  padding: 4vw 7vw 2vw;
+  font-family: "WorkSans", sans-serif;
+  font-size: 0.9vw;
+}
+
+.footer-logo {
+  color: white;
+  font-size: 1.5vw;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2vw;
+  font-family: "WorkSans", sans-serif;
+  letter-spacing: 0.1vw;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2vw;
+}
+
+.footer-nav li a {
+  text-decoration: none;
+  color: #dcdcdc;
+  font-weight: 300;
+  font-size: 0.95vw;
+}
+
+.footer-line {
+  border: none;
+  border-top: 1px solid #888;
+  margin: 2vw 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85vw;
+  color: #aaa;
+  flex-wrap: wrap;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5vw;
+}
+
+.footer-social a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.9vw;
+}
+
+.footer-logo-img {
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 2vw;
+  display: block;
+}
