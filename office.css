@@ -194,17 +194,17 @@ body {
 /* Make bottom border white for middle column (2nd column) */
 /* Explicitly target middle column cells */
 /* Remove bottom border of middle column cells */
-.grid-feature > *:nth-child(2),
+/* .grid-feature > *:nth-child(2),
 .grid-feature > *:nth-child(5),
 .grid-feature > *:nth-child(8) {
   border-bottom: none;
-}
+} */
 
 /* Remove top border of the cell below the middle column cells */
-.grid-feature > *:nth-child(5),
+/* .grid-feature > *:nth-child(5),
 .grid-feature > *:nth-child(8) {
   border-top: none;
-}
+} */
 /* Center image slices */
 .image-slice img {
   width: 100%;
