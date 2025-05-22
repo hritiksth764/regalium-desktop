@@ -51,7 +51,7 @@ function triggerTransition() {
 
   setTimeout(() => {
     isTransitioning = false;
-  }, 1200);
+  }, 800);
 }
 
 // Debounced scroll control for smooth phase change
@@ -156,4 +156,63 @@ hamburgerMenu.addEventListener("click", () => {
 closeMenu.addEventListener("click", () => {
   menuOverlay.classList.remove("active");
   document.body.style.overflow = "auto";
+});
+
+// Guiding Ethos Panel Animation
+const ethosTrigger = document.querySelector(".guiding-ethos-trigger");
+const ethosPanel = document.querySelector(".ethos-panel");
+const closeEthosBtn = document.querySelector(".close-ethos");
+
+ethosTrigger?.addEventListener("click", () => {
+  body.classList.add("ethos-open");
+  ethosPanel.classList.add("visible");
+  body.classList.add("lock-scroll");
+  body.style.overflowY = "hidden";
+  header.classList.remove("visible");
+});
+
+closeEthosBtn?.addEventListener("click", () => {
+  body.classList.remove("ethos-open");
+  ethosPanel.classList.remove("visible");
+  body.classList.remove("lock-scroll");
+
+  // Restore scroll based on current phase
+  if (currentPhase === maxPhase) {
+    body.style.overflowY = "auto";
+  } else {
+    body.style.overflowY = "hidden";
+  }
+
+  if (currentPhase >= 2) {
+    header.classList.add("visible");
+  }
+});
+
+// Timeline Panel Animation
+const timelineTrigger = document.querySelector(".label-right");
+const timelinePanel = document.querySelector(".timeline-panel");
+const closeTimelineBtn = document.querySelector(".close-timeline");
+
+timelineTrigger?.addEventListener("click", () => {
+  body.classList.add("timeline-open");
+  timelinePanel.classList.add("visible");
+  body.classList.add("lock-scroll");
+  body.style.overflowY = "hidden";
+  header.classList.remove("visible");
+});
+
+closeTimelineBtn?.addEventListener("click", () => {
+  body.classList.remove("timeline-open");
+  timelinePanel.classList.remove("visible");
+  body.classList.remove("lock-scroll");
+
+  if (currentPhase === maxPhase) {
+    body.style.overflowY = "auto";
+  } else {
+    body.style.overflowY = "hidden";
+  }
+
+  if (currentPhase >= 2) {
+    header.classList.add("visible");
+  }
 });

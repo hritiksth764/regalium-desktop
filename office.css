@@ -34,35 +34,47 @@ body {
 } */
 
 /* ---------------------- HEADER ---------------------- */
+/* ======= HEADER ======= */
 .contact-header {
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.2vw 7vw;
-  height: 8vh;
+  padding: 0 5.2vw;
+  background-color: transparent;
   position: relative;
-}
-
-/* Placeholder for layout symmetry */
-.header-left {
-  width: 1.8vw;
+  z-index: 999;
 }
 
 .contact-logo {
-  font-family: serif;
+  display: flex;
+  align-items: center;
+  font-family: "CustomSerif", serif;
   font-size: 2vw;
   font-weight: 400;
-  text-align: center;
   letter-spacing: 0.05vw;
+  line-height: 1;
+}
+
+.contact-logo img {
+  height: 2.4vw;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .hamburger-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  height: 100%;
 }
 
 .hamburger-menu svg {
   width: 1.8vw;
   height: auto;
+  display: block;
 }
 
 .luxury-retail {
@@ -241,6 +253,15 @@ body {
   background: #111;
   color: #fff;
   transform: rotateY(180deg);
+}
+
+.card-back p {
+  color: #fff;
+  font-family: WorkSans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 175% */
 }
 
 /* Optional visual consistency */
@@ -430,6 +451,16 @@ small {
   text-align: center;
   margin-top: 0 !important;
   padding-top: 10px !important;
+  text-decoration: none;
+}
+.right-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.right-card {
+  cursor: pointer;
 }
 
 .right-card img {
